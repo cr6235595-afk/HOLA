@@ -69,7 +69,6 @@ local function init_globals()
 		local set_topleft_text = core.set_topleft_text
 		core.set_topleft_text = function(s)
 			s = (s or "") .. "\n"
-			s = s .. core.colorize("#f22", core.gettext("Debug build, expect worse performance"))
 			set_topleft_text(s)
 		end
 	end
@@ -151,3 +150,4 @@ end
 
 assert(os.execute == nil)
 init_globals()
+
