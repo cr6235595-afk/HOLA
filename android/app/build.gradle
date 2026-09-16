@@ -33,7 +33,7 @@ android {
 
 		buildTypes {
 			release {
-				minifyEnabled true
+				minifyEnabled false
 				signingConfig signingConfigs.release
 			}
 		}
@@ -138,5 +138,6 @@ dependencies {
 	implementation project(':native')
 	implementation 'androidx.appcompat:appcompat:1.6.1'
 }
+
 
 
