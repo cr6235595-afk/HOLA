@@ -206,7 +206,7 @@ local function get_formspec(tabview, name, tabdata)
 	if world then
 		retval = retval ..
 				"button[0,0;3.225,0.8;world_delete;".. fgettext("Delete") .. "]" ..
-				"button[3.325,0;3.225,0.8;world_configure;".. fgettext("Select Mods") .. "]"
+				
 	end
 	retval = retval ..
 			"button[6.65,0;3.225,0.8;world_create;".. fgettext("New") .. "]" ..
@@ -471,4 +471,5 @@ return {
 	cbf_button_handler = main_button_handler,
 	on_change = on_change
 }
+
 
