@@ -119,41 +119,23 @@ void GameUI::update(const RunStats &stats, Client *client, MapDrawControl *draw_
 	m_guitext->setVisible(m_flags.show_minimal_debug);
 
 	// Basic debug text also shows info that might give a gameplay advantage
-	if (m_flags.show_basic_debug) {
-		v3f player_position = player->getPosition();
+        if (m_flags.show_basic_debug) {
+                v3f player_position = player->getPosition();
 
-		std::ostringstream os(std::ios_base::binary);
-		os << std::setprecision(1) << std::fixed
-			<< "pos: (" << (player_position.X / BS)
-			<< ", " << (player_position.Y / BS)
-			<< ", " << (player_position.Z / BS)
-			<< ") | yaw: " << (wrapDegrees_0_360(cam.camera_yaw)) << "° "
-			<< yawToDirectionString(cam.camera_yaw)
-			<< " | pitch: " << (-wrapDegrees_180(cam.camera_pitch)) << "°"
-			<< " | seed: " << ((u64)client->getMapSeed());
+                std::ostringstream os(std::ios_base::binary);
+                os << std::setprecision(1) << std::fixed
+                        << "pos: (" << (player_position.X / BS)
+                        << ", " << (player_position.Y / BS)
+                        << ", " << (player_position.Z / BS)
+                        << ")";
 
-		if (pointed_old.type == POINTEDTHING_NODE) {
-			ClientMap &map = client->getEnv().getClientMap();
-			const NodeDefManager *nodedef = client->getNodeDefManager();
-			MapNode n = map.getNode(pointed_old.node_undersurface);
+                m_guitext2->setRelativePosition(core::rect<s32>(5, 5 + minimal_debug_height,
+                                screensize.X, screensize.Y));
 
-			if (n.getContent() != CONTENT_IGNORE) {
-				if (nodedef->get(n).name == "unknown") {
-					os << ", pointed: <unknown node>";
-				} else {
-					os << ", pointed: " << nodedef->get(n).name;
-				}
-				os << ", param2: " << (u64) n.getParam2();
-			}
-		}
+                setStaticText(m_guitext2, utf8_to_wide(os.str()).c_str());
+        }
 
-		m_guitext2->setRelativePosition(core::rect<s32>(5, 5 + minimal_debug_height,
-				screensize.X, screensize.Y));
-
-		setStaticText(m_guitext2, utf8_to_wide(os.str()).c_str());
-	}
-
-	m_guitext2->setVisible(m_flags.show_basic_debug);
+        m_guitext2->setVisible(m_flags.show_basic_debug);
 
 	setStaticText(m_guitext_info, m_infotext.c_str());
 	m_guitext_info->setVisible(m_flags.show_hud && g_menumgr.menuCount() == 0);
