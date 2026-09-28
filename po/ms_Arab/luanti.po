@@ -2760,8 +2760,8 @@ msgstr "توݢول لوݢ سيمبڠ"
 
 #: src/gui/touchscreenlayout.cpp
 #, fuzzy
-msgid "Toggle debug"
-msgstr "توݢول کابوت"
+msgid "Coordinates"
+msgstr "کوردینات"
 
 #: src/gui/touchscreenlayout.cpp src/settings_translation_file.cpp
 msgid "Toggle fast"

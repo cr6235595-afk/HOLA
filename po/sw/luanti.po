@@ -2831,8 +2831,8 @@ msgstr "Togoa haraka"
 
 #: src/gui/touchscreenlayout.cpp
 #, fuzzy
-msgid "Toggle debug"
-msgstr "Togoa kuruka"
+msgid "Coordinates"
+msgstr "Viwianishi"
 
 #: src/gui/touchscreenlayout.cpp src/settings_translation_file.cpp
 msgid "Toggle fast"

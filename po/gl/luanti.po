@@ -2721,8 +2721,8 @@ msgid "Toggle chat log"
 msgstr "Alternar o rexistro da conversa"
 
 #: src/gui/touchscreenlayout.cpp
-msgid "Toggle debug"
-msgstr "Activar/desactivar depuración"
+msgid "Coordinates"
+msgstr "Coordenadas"
 
 #: src/gui/touchscreenlayout.cpp src/settings_translation_file.cpp
 msgid "Toggle fast"

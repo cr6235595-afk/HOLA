@@ -2738,8 +2738,8 @@ msgstr "mu'e co'a jonai mo'u sutra"
 
 #: src/gui/touchscreenlayout.cpp
 #, fuzzy
-msgid "Toggle debug"
-msgstr "mu'e co'a jonai mo'u vofli"
+msgid "Coordinates"
+msgstr "jicmu"
 
 #: src/gui/touchscreenlayout.cpp src/settings_translation_file.cpp
 #, fuzzy

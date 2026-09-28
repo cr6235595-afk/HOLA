@@ -2756,8 +2756,8 @@ msgstr "Chattehistorikk av/på"
 
 #: src/gui/touchscreenlayout.cpp
 #, fuzzy
-msgid "Toggle debug"
-msgstr "Tåke av/på"
+msgid "Coordinates"
+msgstr "Koordinater"
 
 #: src/gui/touchscreenlayout.cpp src/settings_translation_file.cpp
 msgid "Toggle fast"

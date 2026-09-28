@@ -2698,8 +2698,8 @@ msgid "Toggle chat log"
 msgstr "チャット表示切替"
 
 #: src/gui/touchscreenlayout.cpp
-msgid "Toggle debug"
-msgstr "デバッグ切替"
+msgid "Coordinates"
+msgstr "座標"
 
 #: src/gui/touchscreenlayout.cpp src/settings_translation_file.cpp
 msgid "Toggle fast"

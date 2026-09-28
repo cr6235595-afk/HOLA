@@ -2763,8 +2763,8 @@ msgstr "Тез басууга которуу"
 
 #: src/gui/touchscreenlayout.cpp
 #, fuzzy
-msgid "Toggle debug"
-msgstr "Учууга которуу"
+msgid "Coordinates"
+msgstr "Координаттар"
 
 #: src/gui/touchscreenlayout.cpp src/settings_translation_file.cpp
 msgid "Toggle fast"

@@ -2677,8 +2677,8 @@ msgid "Toggle chat log"
 msgstr "启用/禁用聊天记录"
 
 #: src/gui/touchscreenlayout.cpp
-msgid "Toggle debug"
-msgstr "显示/隐藏调试信息"
+msgid "Coordinates"
+msgstr "坐标"
 
 #: src/gui/touchscreenlayout.cpp src/settings_translation_file.cpp
 msgid "Toggle fast"

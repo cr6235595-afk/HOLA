@@ -2655,8 +2655,8 @@ msgid "Toggle chat log"
 msgstr "o lon e / o weka e toki tan lukin"
 
 #: src/gui/touchscreenlayout.cpp
-msgid "Toggle debug"
-msgstr "o open e / o weka e lipu sona"
+msgid "Coordinates"
+msgstr "ilo sitelen pi lon"
 
 #: src/gui/touchscreenlayout.cpp src/settings_translation_file.cpp
 msgid "Toggle fast"

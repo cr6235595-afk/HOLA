@@ -2751,8 +2751,8 @@ msgstr "מתג צא'ט לוג"
 
 #: src/gui/touchscreenlayout.cpp
 #, fuzzy
-msgid "Toggle debug"
-msgstr "מתג ערפל"
+msgid "Coordinates"
+msgstr "קואורדינטות"
 
 #: src/gui/touchscreenlayout.cpp src/settings_translation_file.cpp
 msgid "Toggle fast"

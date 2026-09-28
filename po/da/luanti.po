@@ -2754,8 +2754,8 @@ msgid "Toggle chat log"
 msgstr "Slå chat log til/fra"
 
 #: src/gui/touchscreenlayout.cpp
-msgid "Toggle debug"
-msgstr "Slå debug til/fra"
+msgid "Coordinates"
+msgstr "Koordinater"
 
 #: src/gui/touchscreenlayout.cpp src/settings_translation_file.cpp
 msgid "Toggle fast"

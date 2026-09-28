@@ -2728,8 +2728,8 @@ msgid "Toggle chat log"
 msgstr "Превкл. разговори"
 
 #: src/gui/touchscreenlayout.cpp
-msgid "Toggle debug"
-msgstr "Превключване отстраняването на грешки"
+msgid "Coordinates"
+msgstr "Координати"
 
 #: src/gui/touchscreenlayout.cpp src/settings_translation_file.cpp
 msgid "Toggle fast"

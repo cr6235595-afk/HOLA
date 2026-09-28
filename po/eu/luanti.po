@@ -2737,8 +2737,8 @@ msgstr ""
 
 #: src/gui/touchscreenlayout.cpp
 #, fuzzy
-msgid "Toggle debug"
-msgstr "Txandakatu hegaz egitea"
+msgid "Coordinates"
+msgstr "Koordenatuak"
 
 #: src/gui/touchscreenlayout.cpp src/settings_translation_file.cpp
 msgid "Toggle fast"

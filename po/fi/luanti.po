@@ -2728,8 +2728,8 @@ msgid "Toggle chat log"
 msgstr "Keskusteluloki päälle/pois"
 
 #: src/gui/touchscreenlayout.cpp
-msgid "Toggle debug"
-msgstr "Vianetsintätiedot päälle/pois"
+msgid "Coordinates"
+msgstr "Koordinaatit"
 
 #: src/gui/touchscreenlayout.cpp src/settings_translation_file.cpp
 msgid "Toggle fast"

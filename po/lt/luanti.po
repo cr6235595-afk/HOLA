@@ -2665,8 +2665,8 @@ msgid "Toggle chat log"
 msgstr "Perjungti pokalbių žurnalą"
 
 #: src/gui/touchscreenlayout.cpp
-msgid "Toggle debug"
-msgstr "Perjungti derinimą"
+msgid "Coordinates"
+msgstr "Koordinatės"
 
 #: src/gui/touchscreenlayout.cpp src/settings_translation_file.cpp
 msgid "Toggle fast"

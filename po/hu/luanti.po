@@ -2718,8 +2718,8 @@ msgid "Toggle chat log"
 msgstr "Csevegésnapló váltása"
 
 #: src/gui/touchscreenlayout.cpp
-msgid "Toggle debug"
-msgstr "Hibakeresés be-/kikapcsolása"
+msgid "Coordinates"
+msgstr "Koordináták"
 
 #: src/gui/touchscreenlayout.cpp src/settings_translation_file.cpp
 msgid "Toggle fast"

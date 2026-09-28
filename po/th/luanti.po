@@ -2753,8 +2753,8 @@ msgstr "บันทึกสนทนาสลับ"
 
 #: src/gui/touchscreenlayout.cpp
 #, fuzzy
-msgid "Toggle debug"
-msgstr "สลับหมอก"
+msgid "Coordinates"
+msgstr "พิกัด"
 
 #: src/gui/touchscreenlayout.cpp src/settings_translation_file.cpp
 msgid "Toggle fast"

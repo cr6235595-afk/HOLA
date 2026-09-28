@@ -2789,8 +2789,8 @@ msgstr "بدّل عرض سجل المحادثة"
 
 #: src/gui/touchscreenlayout.cpp
 #, fuzzy
-msgid "Toggle debug"
-msgstr "بدّل ظهور الضباب"
+msgid "Coordinates"
+msgstr "الإحداثيات"
 
 #: src/gui/touchscreenlayout.cpp src/settings_translation_file.cpp
 msgid "Toggle fast"

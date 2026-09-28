@@ -2757,8 +2757,8 @@ msgstr "Togol log sembang"
 
 #: src/gui/touchscreenlayout.cpp
 #, fuzzy
-msgid "Toggle debug"
-msgstr "Togol kabut"
+msgid "Coordinates"
+msgstr "Koordinat"
 
 #: src/gui/touchscreenlayout.cpp src/settings_translation_file.cpp
 msgid "Toggle fast"

@@ -2721,8 +2721,8 @@ msgid "Toggle chat log"
 msgstr "Przełącz historię czatu"
 
 #: src/gui/touchscreenlayout.cpp
-msgid "Toggle debug"
-msgstr "Przełącz debugowanie"
+msgid "Coordinates"
+msgstr "Współrzędne"
 
 #: src/gui/touchscreenlayout.cpp src/settings_translation_file.cpp
 msgid "Toggle fast"

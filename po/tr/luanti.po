@@ -2756,8 +2756,8 @@ msgid "Toggle chat log"
 msgstr "Sohbet günlüğünü aç/kapa"
 
 #: src/gui/touchscreenlayout.cpp
-msgid "Toggle debug"
-msgstr "Hata ayıklamayı aç / kapat"
+msgid "Coordinates"
+msgstr "Koordinatlar"
 
 #: src/gui/touchscreenlayout.cpp src/settings_translation_file.cpp
 msgid "Toggle fast"

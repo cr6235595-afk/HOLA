@@ -2723,8 +2723,8 @@ msgid "Toggle chat log"
 msgstr "Прекидач дневника ћаскања"
 
 #: src/gui/touchscreenlayout.cpp
-msgid "Toggle debug"
-msgstr "Прекидач исправке грешака"
+msgid "Coordinates"
+msgstr "Координате"
 
 #: src/gui/touchscreenlayout.cpp src/settings_translation_file.cpp
 msgid "Toggle fast"

@@ -2693,8 +2693,8 @@ msgid "Toggle chat log"
 msgstr "채팅 기록 열기"
 
 #: src/gui/touchscreenlayout.cpp
-msgid "Toggle debug"
-msgstr "디버그 정보 켜기"
+msgid "Coordinates"
+msgstr "좌표"
 
 #: src/gui/touchscreenlayout.cpp src/settings_translation_file.cpp
 msgid "Toggle fast"

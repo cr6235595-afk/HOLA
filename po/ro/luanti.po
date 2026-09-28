@@ -2730,8 +2730,8 @@ msgid "Toggle chat log"
 msgstr "Comutați jurnalul de chat"
 
 #: src/gui/touchscreenlayout.cpp
-msgid "Toggle debug"
-msgstr "Informații debug"
+msgid "Coordinates"
+msgstr "Coordonate"
 
 #: src/gui/touchscreenlayout.cpp src/settings_translation_file.cpp
 msgid "Toggle fast"

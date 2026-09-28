@@ -2707,8 +2707,8 @@ msgid "Toggle chat log"
 msgstr "Увімкнути журнал чату"
 
 #: src/gui/touchscreenlayout.cpp
-msgid "Toggle debug"
-msgstr "Перемкнути налагодження"
+msgid "Coordinates"
+msgstr "Координати"
 
 #: src/gui/touchscreenlayout.cpp src/settings_translation_file.cpp
 msgid "Toggle fast"

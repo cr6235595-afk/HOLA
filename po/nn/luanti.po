@@ -2727,8 +2727,8 @@ msgstr "Slå chatloggen av eller på"
 
 #: src/gui/touchscreenlayout.cpp
 #, fuzzy
-msgid "Toggle debug"
-msgstr "Slå av/på tåke"
+msgid "Coordinates"
+msgstr "Koordinatar"
 
 #: src/gui/touchscreenlayout.cpp src/settings_translation_file.cpp
 msgid "Toggle fast"

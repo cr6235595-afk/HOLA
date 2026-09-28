@@ -2674,8 +2674,8 @@ msgid "Toggle chat log"
 msgstr "Pārslēgt tērzēšanas žurnālu"
 
 #: src/gui/touchscreenlayout.cpp
-msgid "Toggle debug"
-msgstr "Pārslēgt atkļūdošanu"
+msgid "Coordinates"
+msgstr "Koordinātas"
 
 #: src/gui/touchscreenlayout.cpp src/settings_translation_file.cpp
 msgid "Toggle fast"

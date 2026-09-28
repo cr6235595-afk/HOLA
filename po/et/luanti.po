@@ -2738,8 +2738,8 @@ msgstr "Lülita vestluslogi sisse/välja"
 
 #: src/gui/touchscreenlayout.cpp
 #, fuzzy
-msgid "Toggle debug"
-msgstr "Lülita udu sisse/välja"
+msgid "Coordinates"
+msgstr "Koordinaadid"
 
 #: src/gui/touchscreenlayout.cpp src/settings_translation_file.cpp
 msgid "Toggle fast"

@@ -2646,8 +2646,8 @@ msgstr ""
 
 #: src/gui/touchscreenlayout.cpp
 #, fuzzy
-msgid "Toggle debug"
-msgstr "Dì-bhugachadh gineadair nam mapa"
+msgid "Coordinates"
+msgstr "Co-chomharran"
 
 #: src/gui/touchscreenlayout.cpp src/settings_translation_file.cpp
 msgid "Toggle fast"

@@ -2726,8 +2726,8 @@ msgid "Toggle chat log"
 msgstr "அரட்டை பதிவை மாற்றவும்"
 
 #: src/gui/touchscreenlayout.cpp
-msgid "Toggle debug"
-msgstr "பிழைத்திருத்தத்தை மாற்றவும்"
+msgid "Coordinates"
+msgstr "ஆயத்தொலைவுகள்"
 
 #: src/gui/touchscreenlayout.cpp src/settings_translation_file.cpp
 msgid "Toggle fast"

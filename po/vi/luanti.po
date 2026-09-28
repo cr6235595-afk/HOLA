@@ -2723,8 +2723,8 @@ msgid "Toggle chat log"
 msgstr "Chuyển đổi nhật kí trò chuyện"
 
 #: src/gui/touchscreenlayout.cpp
-msgid "Toggle debug"
-msgstr "Bật gỡ lỗi"
+msgid "Coordinates"
+msgstr "Tọa độ"
 
 #: src/gui/touchscreenlayout.cpp src/settings_translation_file.cpp
 msgid "Toggle fast"

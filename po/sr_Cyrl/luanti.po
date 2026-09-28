@@ -2763,8 +2763,8 @@ msgstr "Укључи/Искључи трчање"
 
 #: src/gui/touchscreenlayout.cpp
 #, fuzzy
-msgid "Toggle debug"
-msgstr "Укључи/Искључи летење"
+msgid "Coordinates"
+msgstr "Координате"
 
 #: src/gui/touchscreenlayout.cpp src/settings_translation_file.cpp
 msgid "Toggle fast"

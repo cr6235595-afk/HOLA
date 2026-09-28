@@ -70,7 +70,7 @@ const char *button_titles[] = {
 	N_("Toggle fly"),
 	N_("Toggle fast"),
 	N_("Toggle noclip"),
-	N_("Toggle debug"),
+	N_("Coordinates"),
 	N_("Change camera"),
 	N_("Range select"),
 	N_("Toggle minimap"),
@@ -413,3 +413,5 @@ void make_button_grid_title(gui::IGUIStaticText *text, touch_gui_button_id btn, 
 			pos.X + dim.Width / 2, rect.LowerRightCorner.Y + dim.Height));
 	text->setTextAlignment(gui::EGUIA_CENTER, gui::EGUIA_UPPERLEFT);
 }
+
+

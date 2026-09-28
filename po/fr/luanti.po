@@ -2734,8 +2734,8 @@ msgid "Toggle chat log"
 msgstr "Journal du tchat"
 
 #: src/gui/touchscreenlayout.cpp
-msgid "Toggle debug"
-msgstr "Infos de débogage"
+msgid "Coordinates"
+msgstr "Coordonnées"
 
 #: src/gui/touchscreenlayout.cpp src/settings_translation_file.cpp
 msgid "Toggle fast"

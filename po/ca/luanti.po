@@ -2827,8 +2827,8 @@ msgstr "Activar ràpid"
 
 #: src/gui/touchscreenlayout.cpp
 #, fuzzy
-msgid "Toggle debug"
-msgstr "Activar volar"
+msgid "Coordinates"
+msgstr "Coordenades"
 
 #: src/gui/touchscreenlayout.cpp src/settings_translation_file.cpp
 msgid "Toggle fast"

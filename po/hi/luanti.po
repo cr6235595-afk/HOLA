@@ -2747,8 +2747,8 @@ msgstr "बातें दिखना"
 
 #: src/gui/touchscreenlayout.cpp
 #, fuzzy
-msgid "Toggle debug"
-msgstr "कोहरा"
+msgid "Coordinates"
+msgstr "निर्देशांक"
 
 #: src/gui/touchscreenlayout.cpp src/settings_translation_file.cpp
 msgid "Toggle fast"

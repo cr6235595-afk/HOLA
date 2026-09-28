@@ -2762,8 +2762,8 @@ msgstr "Chatlogboek wisselen"
 
 #: src/gui/touchscreenlayout.cpp
 #, fuzzy
-msgid "Toggle debug"
-msgstr "Schakel mist in/uit"
+msgid "Coordinates"
+msgstr "Coördinaten"
 
 #: src/gui/touchscreenlayout.cpp src/settings_translation_file.cpp
 msgid "Toggle fast"
