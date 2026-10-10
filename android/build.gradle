@@ -5,7 +5,7 @@ project.ext.set("versionMinor", 17)     // Version Minor
 project.ext.set("versionPatch", 0)      // Version Patch
 // ^ keep in sync with cmake
 
-project.ext.set("versionBuild", 3)      // Version Build
+project.ext.set("versionBuild", 4)      // Version Build
 // ^ fourth version number to allow releasing Android-only fixes and beta versions
 
 buildscript {
@@ -32,5 +32,6 @@ allprojects {
 tasks.register('clean', Delete) {
 	delete rootProject.layout.buildDirectory
 }
+
 
 
