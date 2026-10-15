@@ -37,6 +37,11 @@ void showComboBoxDialog(const std::string *optionList, s32 listSize, s32 selecte
 void shareFileAndroid(const std::string &path);
 
 /**
+ * Opens the Android share chooser for text
+ */
+void shareTextAndroid(const std::string &text);
+
+/**
  * Shows/hides notification that the game is running
  *
  * @param show whether to show/hide the notification
@@ -93,3 +98,4 @@ float getDisplayDensity();
 v2u32 getDisplaySize();
 
 }
+

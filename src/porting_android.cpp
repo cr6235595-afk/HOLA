@@ -187,6 +187,19 @@ void shareFileAndroid(const std::string &path)
 	jnienv->CallVoidMethod(activity, url_open, jurl);
 }
 
+void shareTextAndroid(const std::string &text)
+{
+        jmethodID share_text = jnienv->GetMethodID(activityClass, "shareText",
+                        "(Ljava/lang/String;)V");
+
+        FATAL_ERROR_IF(share_text == nullptr,
+                        "porting::shareTextAndroid unable to find Java shareText method");
+
+        jstring jtext = jnienv->NewStringUTF(text.c_str());
+        jnienv->CallVoidMethod(activity, share_text, jtext);
+        jnienv->DeleteLocalRef(jtext);
+}
+
 void setPlayingNowNotification(bool show)
 {
 	jmethodID play_notification = jnienv->GetMethodID(activityClass,

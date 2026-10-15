@@ -217,6 +217,14 @@ public class GameActivity extends SDLActivity {
 		}
 	}
 
+        public void shareText(String text) {
+                Intent intent = new Intent(Intent.ACTION_SEND);
+                intent.setType("text/plain");
+                intent.putExtra(Intent.EXTRA_TEXT, text);
+                Intent shareIntent = Intent.createChooser(intent, "Share BlockCraft");
+                startActivity(shareIntent);
+        }
+
 	public String getUserDataPath() {
 		return Utils.getUserDataDirectory(this).getAbsolutePath();
 	}

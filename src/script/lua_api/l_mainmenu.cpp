@@ -1097,6 +1097,21 @@ int ModApiMainMenu::l_share_file(lua_State *L)
 }
 
 /******************************************************************************/
+/******************************************************************************/
+int ModApiMainMenu::l_share_text(lua_State *L)
+{
+        const char *text = luaL_checkstring(L, 1);
+
+#ifdef __ANDROID__
+        porting::shareTextAndroid(text);
+        lua_pushboolean(L, true);
+#else
+        lua_pushboolean(L, false);
+#endif
+        return 1;
+}
+
+/******************************************************************************/
 int ModApiMainMenu::l_do_async_callback(lua_State *L)
 {
 	MainMenuScripting *script = getScriptApi<MainMenuScripting>(L);
@@ -1191,6 +1206,7 @@ void ModApiMainMenu::Initialize(lua_State *L, int top)
 	API_FCT(open_url_dialog);
 	API_FCT(open_dir);
 	API_FCT(share_file);
+	API_FCT(share_text);
 	API_FCT(do_async_callback);
 	API_FCT(copy_to_clipboard);
 
@@ -1226,3 +1242,6 @@ void ModApiMainMenu::InitializeAsync(lua_State *L, int top)
 	API_FCT(get_formspec_version);
 	API_FCT(is_debug_build);
 }
+
+
+
