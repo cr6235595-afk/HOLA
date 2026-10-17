@@ -25,8 +25,7 @@ return {
 
                 button("BlockCraft - Privacy Policy", "https://blockcraftbuildinggame.blogspot.com/")
 
-                label("Contact: testdeprueba1x@gmail.com")
-                y = y + 0.15
+                button("Licenses and Credits", "https://blockcraftbuildinggame.blogspot.com/2026/10/licenses-and-credits-blockcraft.html")
 
                 button("VoxeLibre GitHub", "https://github.com/VoxeLibre/VoxeLibre")
 
@@ -47,17 +46,16 @@ return {
                 y = y + 0.2
 
                 label("Desarrolladores principales")
-                label("Perttu Ahola (celeron55) <celeron55@gmail.com>")
+                label("Perttu Ahola (celeron55)")
                 label("[Project founder]")
-                label("sfan5 <sfan5@live.de>")
-                label("ShadowNinja <shadowninja@minetest.net>")
+                label("sfan5")
+                label("ShadowNinja")
                 label("Nathanaëlle Courant (Nore/Ekdohibs)")
-                label("<nore@mesecons.net>")
-                label("Loic Blot (nerzhul/nrz) <loic.blot@unix-experience.fr>")
-                label("Andrew Ward (rubenwardy) <rw@rubenwardy.com>")
-                label("Krock/SmallJoker <mk939@ymail.com>")
-                label("Lars Hofhansl <larsh@apache.org>")
-                label("v-rob <robinsonvincent89@gmail.com>")
+                label("Loic Blot (nerzhul/nrz)")
+                label("Andrew Ward (rubenwardy)")
+                label("Krock/SmallJoker")
+                label("Lars Hofhansl")
+                label("v-rob")
                 label("Desour/DS")
                 label("srifqi")
                 label("grorp")
@@ -88,38 +86,38 @@ return {
                 label("Desarrolladores principales anteriores")
                 label("BlockMen")
                 label("Maciej Kasatkin (RealBadAngel) [RIP]")
-                label("Lisa Milne (darkrose) <lisa@ltmnet.com>")
+                label("Lisa Milne (darkrose)")
                 label("proller")
                 label("Luanti 5.17.0-dev")
-                label("Ilya Zhuravlev (xyz) <xyz@minetest.net>")
-                label("PilzAdam <pilzadam@minetest.net>")
-                label("est31 <MTest31@outlook.com>")
-                label("kahri <kahrl@gmx.net>")
-                label("Ryan Kwolek (kwolekr) <kwolekr@minetest.net>")
+                label("Ilya Zhuravlev (xyz)")
+                label("PilzAdam")
+                label("est31")
+                label("kahri")
+                label("Ryan Kwolek (kwolekr)")
                 label("Zeno")
-                label("Auke Kok (sofar) <sofar@foo-projects.org>")
-                label("Aaron Suen <warr1024@gmail.com>")
+                label("Auke Kok (sofar)")
+                label("Aaron Suen")
                 label("paramat")
-                label("Pierre-Yves Rollo <dev@pyrollo.com>")
+                label("Pierre-Yves Rollo")
                 label("hecks")
                 label("Jude Melton-Houghton (TurkeyMcMac) [RIP]")
-                label("Hugues Ross <hugues.ross@gmail.com>")
-                label("Dmitry Kostenko (x2048) <codeforsmile@gmail.com>")
+                label("Hugues Ross")
+                label("Dmitry Kostenko (x2048)")
 
                 y = y + 0.2
 
                 label("Colaboradores anteriores")
                 label("Aella Chiana Moskopp (erle)")
-                label("<erle@dieweltistgarnichtso.net> [Logo]")
+                label(" [Logo]")
                 label("numzero")
-                label("red-001 <red-001@outlook.ie>")
+                label("red-001")
                 label("Giuseppe Bilotta")
                 label("Luanti 5.17.0-dev")
                 label("Hybrid Dog")
                 label("ClobberXD")
-                label("Daniel Juhasz (juhdanad) <juhdanad@gmail.com>")
+                label("Daniel Juhasz (juhdanad)")
                 label("partir el registro de depura")
-                label("MirceaKitsune <mirceakitsune@gmail.com>")
+                label("MirceaKitsune")
                 label("Jean-Patrick Guerrero (kilbith)")
                 label("MONTE48")
                 label("Constantin Wenger (SpeedProg)")
@@ -128,11 +126,11 @@ return {
                 label("Rollerozxa")
                 label("Paul Ouellette (pauloue)")
                 label("stujones11")
-                label("Rogier <rogier777@gmail.com>")
+                label("Rogier")
                 label("Gregory Currie (gregorycu)")
                 label("paradust7")
                 label("JacobF")
-                label("Jeija <jeija@mesecons.net>")
+                label("Jeija")
 
                 y = y + 0.35
 
@@ -168,3 +166,4 @@ return {
                 end
         end,
 }
+
