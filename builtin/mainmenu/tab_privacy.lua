@@ -4,9 +4,7 @@ return {
 
         cbf_formspec = function(tabview, name, tabdata)
                 local fs = ""
-
                 fs = fs .. "scroll_container[0.35,0.2;14.8,6.65;privacy_scroll;vertical]"
-
                 local y = 0.2
 
                 local function label(text)
@@ -23,117 +21,25 @@ return {
                 label("BlockCraft: Building Game")
                 y = y + 0.15
 
-                button("BlockCraft - Privacy Policy", "https://blockcraftbuildinggame.blogspot.com/")
+                button("BlockCraft - Privacy Policy",
+                        "https://blockcraftbuildinggame.blogspot.com/")
 
-                button("Licenses and Credits", "https://blockcraftbuildinggame.blogspot.com/2026/10/licenses-and-credits-blockcraft.html")
-
-                button("VoxeLibre GitHub", "https://github.com/VoxeLibre/VoxeLibre")
+                button("Credits and Licenses",
+                        "https://blockcraftbuildinggame.blogspot.com/2026/10/licenses-and-credits-blockcraft.html")
 
                 label("Luanti 5.17.0-dev")
                 y = y + 0.15
-
                 label("This game uses the Luanti engine and Minetest Game,")
                 label("Copyright 2010-2018 Perttu Ahola and contributors,")
                 label("licensed under LGPLv2.1+")
 
                 y = y + 0.1
-
                 button("Luanti.org", "https://luanti.org/")
 
                 label("Renderizador activo:")
                 label("ES 3.2 / ogles2 / SDL 2.32.10")
 
-                y = y + 0.2
-
-                label("Desarrolladores principales")
-                label("Perttu Ahola (celeron55)")
-                label("[Project founder]")
-                label("sfan5")
-                label("ShadowNinja")
-                label("Nathanaëlle Courant (Nore/Ekdohibs)")
-                label("Loic Blot (nerzhul/nrz)")
-                label("Andrew Ward (rubenwardy)")
-                label("Krock/SmallJoker")
-                label("Lars Hofhansl")
-                label("v-rob")
-                label("Desour/DS")
-                label("srifqi")
-                label("grorp")
-                label("Lars Muller (luatic)")
-                label("cx384")
-                label("sfence")
-                label("y5nw")
-
-                y = y + 0.2
-
-                label("Equipo principal")
-                label("Zughy [Issue triager]")
-                label("wsor [Issue triager]")
-                label("Hugo Locurcio (Calinou) [Issue triager]")
-
-                y = y + 0.2
-
-                label("Colaboradores activos")
-                label("siliconsniffer")
-                label("Wuzzy (Wuzzy2)")
-                label("kromka-chleba")
-                label("CrazyladMT")
-                label("jordan4ibanez")
-                label("Elias Astrom")
-
-                y = y + 0.2
-
-                label("Desarrolladores principales anteriores")
-                label("BlockMen")
-                label("Maciej Kasatkin (RealBadAngel) [RIP]")
-                label("Lisa Milne (darkrose)")
-                label("proller")
-                label("Luanti 5.17.0-dev")
-                label("Ilya Zhuravlev (xyz)")
-                label("PilzAdam")
-                label("est31")
-                label("kahri")
-                label("Ryan Kwolek (kwolekr)")
-                label("Zeno")
-                label("Auke Kok (sofar)")
-                label("Aaron Suen")
-                label("paramat")
-                label("Pierre-Yves Rollo")
-                label("hecks")
-                label("Jude Melton-Houghton (TurkeyMcMac) [RIP]")
-                label("Hugues Ross")
-                label("Dmitry Kostenko (x2048)")
-
-                y = y + 0.2
-
-                label("Colaboradores anteriores")
-                label("Aella Chiana Moskopp (erle)")
-                label(" [Logo]")
-                label("numzero")
-                label("red-001")
-                label("Giuseppe Bilotta")
-                label("Luanti 5.17.0-dev")
-                label("Hybrid Dog")
-                label("ClobberXD")
-                label("Daniel Juhasz (juhdanad)")
-                label("partir el registro de depura")
-                label("MirceaKitsune")
-                label("Jean-Patrick Guerrero (kilbith)")
-                label("MONTE48")
-                label("Constantin Wenger (SpeedProg)")
-                label("JosiahWI")
-                label("Ciaran Gultnieks (CiaranG)")
-                label("Rollerozxa")
-                label("Paul Ouellette (pauloue)")
-                label("stujones11")
-                label("Rogier")
-                label("Gregory Currie (gregorycu)")
-                label("paradust7")
-                label("JacobF")
-                label("Jeija")
-
                 y = y + 0.35
-
                 label("VoxeLibre")
                 label("This game includes VoxeLibre, free software distributed")
                 label("under the GNU General Public License v3.0 or later (GPLv3+).")
@@ -145,11 +51,10 @@ return {
                 label("VoxeLibre files.")
 
                 y = y + 0.15
-
-                button("VoxeLibre GitHub", "https://github.com/VoxeLibre/VoxeLibre")
+                button("VoxeLibre GitHub",
+                        "https://github.com/VoxeLibre/VoxeLibre")
 
                 fs = fs .. "scroll_container_end[]"
-
                 local max_scroll = math.max(0, math.ceil(y - 6.65))
                 fs = fs .. ("scrollbaroptions[max=%d;smallstep=1;largestep=5]"):format(max_scroll)
                 fs = fs .. "scrollbar[15.05,0.2;0.35,6.65;vertical;privacy_scroll;0]"
@@ -166,4 +71,3 @@ return {
                 end
         end,
 }
-
