@@ -55,7 +55,7 @@ return {
                         "https://github.com/VoxeLibre/VoxeLibre")
 
                 fs = fs .. "scroll_container_end[]"
-                local max_scroll = math.max(0, math.ceil(y - 6.65))
+                local max_scroll = 10
                 fs = fs .. ("scrollbaroptions[max=%d;smallstep=1;largestep=5]"):format(max_scroll)
                 fs = fs .. "scrollbar[15.05,0.2;0.35,6.65;vertical;privacy_scroll;0]"
 
@@ -71,3 +71,5 @@ return {
                 end
         end,
 }
+
+
