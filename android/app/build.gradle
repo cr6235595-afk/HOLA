@@ -114,7 +114,7 @@ tasks.register("prepareAssets") {
 		}
 
 		                copy {
-                        from "${projRoot}/games/VoxeLibre" into "${assetsFolder}/games/VoxeLibre"
+                        from "${projRoot}/games/mineclonia" into "${assetsFolder}/games/mineclonia"
                 }
 file("${assetsFolder}/.nomedia").text = ""
 	}
