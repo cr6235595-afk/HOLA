@@ -411,7 +411,7 @@ function page_has_contents(page, actual_content)
 			page.id:sub(1, #"mapgen") == "mapgen" or
 			page.id:sub(1, #"advanced") == "advanced"
 	local show_advanced = core.settings:get_bool("show_advanced")
-	if is_advanced and not show_advanced then
+	if is_advanced then
 		return false
 	end
 
@@ -523,6 +523,9 @@ local function get_formspec(dialogdata)
 		"size[", tostring(tabsize.width), ",", tostring(tabsize.height + extra_h), "]",
 		core.settings:get_bool("touch_gui") and "padding[0.01,0.01]" or "",
 		"bgcolor[#0000]",
+                "style[back;bgcolor=#1877F2;textcolor=#FFFFFF;border=false]",
+                "style[privacy_policy;bgcolor=#1877F2;textcolor=#FFFFFF;border=false]",
+                "style[credits_licenses;bgcolor=#1877F2;textcolor=#FFFFFF;border=false]",
 
 		-- HACK: this is needed to allow resubmitting the same formspec
 		formspec_show_hack and " " or "",
@@ -533,19 +536,11 @@ local function get_formspec(dialogdata)
 				tabsize.height + 0.2, back_w,
 				-- TRANSLATORS: Button text to go back
 				fgettext("Back")),
+            ("button[3.2,%f;5.2,0.8;privacy_policy;Privacy Policy]"):format(
+                            tabsize.height + 0.2),
+            ("button[8.6,%f;6.4,0.8;credits_licenses;Licenses]"):format(
+                            tabsize.height + 0.2),
 
-		("box[%f,%f;%f,0.8;#0000008C]"):format(
-			back_w + 0.2, tabsize.height + 0.2, checkbox_w),
-		("checkbox[%f,%f;show_technical_names;%s;%s]"):format(
-			back_w + 2*0.2, tabsize.height + 0.6,
-			-- TRANSLATORS: Checkbox that toggles displaying the technical setting names
-			fgettext("Show technical names"), tostring(show_technical_names)),
-
-		("box[%f,%f;%f,0.8;#0000008C]"):format(
-			back_w + 2*0.2 + checkbox_w, tabsize.height + 0.2, checkbox_w),
-		("checkbox[%f,%f;show_advanced;%s;%s]"):format(
-			back_w + 3*0.2 + checkbox_w, tabsize.height + 0.6,
-			fgettext("Show advanced settings"), tostring(show_advanced)),
 
 		"field[0.25,0.25;", tostring(search_width), ",0.75;search_query;;",
 			core.formspec_escape(dialogdata.query or ""), "]",
@@ -560,8 +555,8 @@ local function get_formspec(dialogdata)
 		"container_end[]",
 		("scroll_container[0.25,1.25;%f,%f;leftscroll;vertical;0.1;0]"):format(
 			left_pane_width, tabsize.height - 1.5),
-		"style_type[button;border=false;bgcolor=#3333]",
-		"style_type[button:hover;border=false;bgcolor=#6663]",
+		"style_type[button;border=false;bgcolor=#1877F2;textcolor=#FFFFFF]",
+		"style_type[button:hover;border=false;bgcolor=#0C5FCC;textcolor=#FFFFFF]",
 	}
 
 	local y = 0
@@ -574,7 +569,7 @@ local function get_formspec(dialogdata)
 			y = y + 0.82
 		end
 		fs[#fs + 1] = ("box[0,%f;%f,0.8;%s]"):format(
-			y, left_pane_width-left_pane_padding, other_page.id == page_id and "#467832FF" or "#3339")
+			y, left_pane_width-left_pane_padding, other_page.id == page_id and "#1877F2FF" or "#1A2E4AFF")
 		fs[#fs + 1] = ("button[0,%f;%f,0.8;page_%s;%s]")
 			:format(y, left_pane_width-left_pane_padding, other_page.id, fgettext(other_page.title))
 		y = y + 0.82
@@ -734,7 +729,16 @@ local function buttonhandler(this, fields)
 		return true
 	end
 
-	if fields.show_technical_names ~= nil then
+	if fields.privacy_policy then
+        core.open_url("https://blockcraftbuildinggame.blogspot.com/2026/09/privacy-policy-blockcraft-building-game.html")
+        return true
+end
+
+if fields.credits_licenses then
+        core.open_url("https://blockcraftbuildinggame.blogspot.com/2026/10/licenses-and-credits-blockcraft.html")
+        return true
+end
+if fields.show_technical_names ~= nil then
 		local value = core.is_yes(fields.show_technical_names)
 		core.settings:set_bool("show_technical_names", value)
 		write_settings_early()
