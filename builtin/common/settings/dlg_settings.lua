@@ -524,8 +524,8 @@ local function get_formspec(dialogdata)
 		core.settings:get_bool("touch_gui") and "padding[0.01,0.01]" or "",
 		"bgcolor[#0000]",
                 "style[back;bgcolor=#1877F2;textcolor=#FFFFFF;border=false]",
-                "style[privacy_policy;bgcolor=#1877F2;textcolor=#FFFFFF;border=false]",
-                "style[credits_licenses;bgcolor=#1877F2;textcolor=#FFFFFF;border=false]",
+                "style[privacy_policy;bgcolor=#1877F2;textcolor=#FFFFFF;border=true]",
+                "style[credits_licenses;bgcolor=#1877F2;textcolor=#FFFFFF;border=true]",
 
 		-- HACK: this is needed to allow resubmitting the same formspec
 		formspec_show_hack and " " or "",
