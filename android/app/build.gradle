@@ -139,6 +139,7 @@ dependencies {
         implementation 'com.google.android.gms:play-services-ads-identifier:18.1.0'
         implementation 'com.google.android.gms:play-services-basement:18.1.0'
         implementation 'com.unity3d.ads-mediation:mediation-sdk:9.5.0'
+        implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.22'
 	implementation project(':native')
 	implementation 'androidx.appcompat:appcompat:1.6.1'
 }
