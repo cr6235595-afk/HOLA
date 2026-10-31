@@ -36,6 +36,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
+import androidx.annotation.NonNull;
+import com.unity3d.mediation.LevelPlayConfiguration;
+import com.unity3d.mediation.LevelPlayInitError;
+import com.unity3d.mediation.LevelPlayInitListener;
+import com.unity3d.mediation.LevelPlay;
+import com.unity3d.mediation.LevelPlayInitRequest;
 import androidx.annotation.StringRes;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -49,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
 	private final static int versionCode = BuildConfig.VERSION_CODE;
 	private static final String SETTINGS = "MinetestSettings";
 	private static final String TAG_VERSION_CODE = "versionCode";
+        private static final String LEVELPLAY_APP_KEY = "291c3e6ad";
 
 	private ProgressBar mProgressBar;
 	private TextView mTextView;
@@ -85,12 +92,27 @@ public class MainActivity extends AppCompatActivity {
 			}
 		}
 	};
+        private final LevelPlayInitListener initListener = new LevelPlayInitListener() {
+                @Override
+                public void onInitFailed(@NonNull LevelPlayInitError error) {
+                        Log.e("LevelPlay", "Initialization failed: " + error);
+                }
 
-	@SuppressLint("UnspecifiedRegisterReceiverFlag")
+                @Override
+                public void onInitSuccess(LevelPlayConfiguration configuration) {
+                        Log.i("LevelPlay", "Initialization succeeded");
+                        LevelPlay.launchTestSuite(getApplicationContext());
+                }
+        };
+        @SuppressLint("UnspecifiedRegisterReceiverFlag")
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+
+                LevelPlay.setMetaData("is_test_suite", "enable");
+                LevelPlayInitRequest initRequest = new LevelPlayInitRequest.Builder(LEVELPLAY_APP_KEY).build();
+                LevelPlay.init(this, initRequest, initListener);
 
 		IntentFilter filter = new IntentFilter(ACTION_UPDATE);
 		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
