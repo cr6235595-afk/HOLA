@@ -1,12 +1,6 @@
-# Potions
+# craft_ruin_texture_pack
+A mineclonia texture pack that is also used for craft &amp; ruin
 
-## License
-MIT License
+Patreon: https://www.patreon.com/c/Gerold55
 
-## Media
-
-### Textures
-See main Mineclonia README.md file
-
-### Sounds
-CC0
+Discord: https://discord.gg/KXv4jPmJbz

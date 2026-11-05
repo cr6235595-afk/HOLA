@@ -1,11 +1,6 @@
-Smoker for Mineclonia.
-Heavily based on Minetest Game (default/furnace.lua) and the Mineclonia Furnaces.
+# craft_ruin_texture_pack
+A mineclonia texture pack that is also used for craft &amp; ruin
 
-## Credits
-PrairieWind.
+Patreon: https://www.patreon.com/c/Gerold55
 
-## License of source code
-LGPLv2.1
-
-## License of media
-See the main Mineclonia README.md file.
+Discord: https://discord.gg/KXv4jPmJbz

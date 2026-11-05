@@ -1,5 +1,6 @@
-# Hoppers
-This is the Hoppers mod for Minetest. It's just a clone of Minecraft hoppers, functions nearly identical to them minus mesecons making them stop and the way they're placed.
+# craft_ruin_texture_pack
+A mineclonia texture pack that is also used for craft &amp; ruin
 
-## Forum Topic
-- https://forum.minetest.net/viewtopic.php?f=11&t=12379
+Patreon: https://www.patreon.com/c/Gerold55
+
+Discord: https://discord.gg/KXv4jPmJbz

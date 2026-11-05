@@ -1,18 +1,6 @@
-# Sprint Mod for Mineclonia
-Forked from [sprint] by GunshipPenguin  
+# craft_ruin_texture_pack
+A mineclonia texture pack that is also used for craft &amp; ruin
 
-## Description
-Allows the player to sprint by pressing the “Use” key (default: E).
-By default, sprinting will make the player travel 80% faster and 
-allow him/her to jump 10% higher. 
+Patreon: https://www.patreon.com/c/Gerold55
 
-## License
-CC0 (see COPYING file)
-
-## Mod developer settings (`init.lua`)
-### `mcl_sprint.SPEED`
-How fast the player will move when sprinting as opposed to normal 
-movement speed. 1.0 represents normal speed so 1.5 would mean that a 
-sprinting player would travel 50% faster than a walking player and 
-2.4 would mean that a sprinting player would travel 140% faster than 
-a walking player.
+Discord: https://discord.gg/KXv4jPmJbz

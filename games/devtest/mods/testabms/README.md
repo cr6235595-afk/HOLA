@@ -1,6 +1,6 @@
-# Test ABMs
+# craft_ruin_texture_pack
+A mineclonia texture pack that is also used for craft &amp; ruin
 
-This mod contains a nodes and related ABM actions.
-By placing these nodes, you can test basic ABM behaviours.
+Patreon: https://www.patreon.com/c/Gerold55
 
-There are separate tests for ABM `chance`, `interval`, `min_y`, `max_y`, `neighbor` and `without_neighbor` fields.
+Discord: https://discord.gg/KXv4jPmJbz

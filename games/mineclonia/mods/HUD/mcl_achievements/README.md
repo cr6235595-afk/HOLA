@@ -1,5 +1,6 @@
-# mcl_achievements
-This registers the achievements for mineclonia using the awards mod.
+# craft_ruin_texture_pack
+A mineclonia texture pack that is also used for craft &amp; ruin
 
-## API
-`reward_xp` - this is a new optional field for award definitions detailing the amount of XP an award/achievement gives when it is granted
+Patreon: https://www.patreon.com/c/Gerold55
+
+Discord: https://discord.gg/KXv4jPmJbz

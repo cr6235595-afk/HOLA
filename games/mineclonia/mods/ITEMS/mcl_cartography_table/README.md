@@ -1,11 +1,6 @@
-# mcl_cartography_table
+# craft_ruin_texture_pack
+A mineclonia texture pack that is also used for craft &amp; ruin
 
-Cartography Tables, by PrairieWind
+Patreon: https://www.patreon.com/c/Gerold55
 
-Adds Cartography Tables to Mineclonia.
-
-## License
-LGPLv2.1
-
-## Media
-See the main Mineclonia README.md file.
+Discord: https://discord.gg/KXv4jPmJbz

@@ -1,9 +1,6 @@
-# Firework mod for Mineclonia
+# craft_ruin_texture_pack
+A mineclonia texture pack that is also used for craft &amp; ruin
 
-## Credits
+Patreon: https://www.patreon.com/c/Gerold55
 
-by NO11 and and some parts by j45
-
-## Media
-
-* mcl_firework_rocket.ogg (tnt_ignite.ogg): Own derivate work of sound by Ned Bouhalassa (CC0) created in 2005, source: <https://freesound.org/people/Ned Bouhalassa/sounds/8320/>
+Discord: https://discord.gg/KXv4jPmJbz

@@ -1,19 +1,6 @@
-# mcl_dripping
+# craft_ruin_texture_pack
+A mineclonia texture pack that is also used for craft &amp; ruin
 
-Based on the "dripping water" minetest mod by kddekadenz.
-Modified for Mineclone 2 by Wuzzy, NO11 and AFCM.
-Refactored to use particles instead of entities by cora.
-Refactored to allow proper definitions by AFCMS.
-Optimized for Mineclonia by Halon.
+Patreon: https://www.patreon.com/c/Gerold55
 
-## Manual
-
-- drops are generated rarely under solid nodes
-- they will stay some time at the generated block and then they fall down
-- when they collide with the ground, a sound is played and they are destroyed
-
-Water and Lava have builtin drops registered.
-
-## License
-
-code, textures & sounds: CC0
+Discord: https://discord.gg/KXv4jPmJbz

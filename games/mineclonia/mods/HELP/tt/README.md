@@ -1,8 +1,6 @@
-# Extended Tooltip (`tt`)
-This mod extends the tooltip of items to add more informative texts.
+# craft_ruin_texture_pack
+A mineclonia texture pack that is also used for craft &amp; ruin
 
-The mod itself does nothing and is meant to be integrated into
-games to use the API to define custom tooltips (see `API.md`).
+Patreon: https://www.patreon.com/c/Gerold55
 
-## License
-MIT License.
+Discord: https://discord.gg/KXv4jPmJbz

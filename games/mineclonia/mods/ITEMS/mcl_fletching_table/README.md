@@ -1,18 +1,6 @@
-# mcl_fletching_table
+# craft_ruin_texture_pack
+A mineclonia texture pack that is also used for craft &amp; ruin
 
-Fletching Tables, by PrairieWind
+Patreon: https://www.patreon.com/c/Gerold55
 
-Adds Fletching Tables to Mineclonia.
-
-## License
-
-LGPLv2.1
-
-## Media
-
-fletching_table_bottom.png
-fletching_table_front.png
-fletching_table_side.png
-fletching_table_top.png
-License: CC BY-SA 4.0
-Author: MrRar
+Discord: https://discord.gg/KXv4jPmJbz

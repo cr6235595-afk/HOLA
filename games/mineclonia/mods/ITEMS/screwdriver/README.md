@@ -1,11 +1,6 @@
-# screwdriver
+# craft_ruin_texture_pack
+A mineclonia texture pack that is also used for craft &amp; ruin
 
-See license.txt for license information.
+Patreon: https://www.patreon.com/c/Gerold55
 
-## License
-Originally by RealBadAngel, Maciej Kasatkin (LGPL 2.1)
-Various Minetest developers and contributors (LGPL 2.1)
-
-## media (textures)
-Created by Wuzzy (CC0):
-* `screwdriver.png`
+Discord: https://discord.gg/KXv4jPmJbz

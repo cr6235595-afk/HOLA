@@ -1,6 +1,6 @@
-## Lua 5.1.5 source
+# craft_ruin_texture_pack
+A mineclonia texture pack that is also used for craft &amp; ruin
 
-This copy has been patched with Minetest-specific changes (`lua_atccall`)
-so it is *not* interchangeable with upstream PUC Lua.
+Patreon: https://www.patreon.com/c/Gerold55
 
-A patch for CVE-2014-5461 has been applied.
+Discord: https://discord.gg/KXv4jPmJbz

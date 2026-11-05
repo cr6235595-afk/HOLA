@@ -1,32 +1,6 @@
-# mcl_fire
+# craft_ruin_texture_pack
+A mineclonia texture pack that is also used for craft &amp; ruin
 
-Fire mod for Mineclonia based on fire from Minetest Game
+Patreon: https://www.patreon.com/c/Gerold55
 
-## License
-Copyright (C) 2012 Perttu Ahola (celeron55) <celeron55@gmail.com>
-
-This program is free software; you can redistribute it and/or modify
-it under the terms of the GNU Lesser General Public License as published by
-the Free Software Foundation; either version 2.1 of the License, or
-(at your option) any later version.
-
-http://www.gnu.org/licenses/lgpl-2.1.html
-
-## Media
-Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)                                 
-http://creativecommons.org/licenses/by-sa/3.0/
-
-### Authors of media files
-
-Muadtralk (CC BY-SA 3.0)
-  fire_basic_flame_animated.png
-
-Dynamicell (CC BY 3.0)
-http://www.freesound.org/people/Dynamicell/sounds/17548/
-  fire_fire.*.ogg
-
-Benboncan (CC BY 3.0)
-https://www.freesound.org/people/Benboncan/sounds/66457/
-  fire_flint_and_steel.ogg
-
-Other sound files by Perttu Ahola (celeron55) <celeron55@gmail.com> (CC BY-SA 3.0).
+Discord: https://discord.gg/KXv4jPmJbz

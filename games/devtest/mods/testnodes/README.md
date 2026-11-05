@@ -1,11 +1,6 @@
-# Test Nodes
+# craft_ruin_texture_pack
+A mineclonia texture pack that is also used for craft &amp; ruin
 
-This mod contains a bunch of basic nodes to test development stuff.
-Most nodes are kept as minimal as possible in order to show off one particular feature of the engine, to make testing stuff easier.
+Patreon: https://www.patreon.com/c/Gerold55
 
-This mod includes tests for:
-
-* drawtypes
-* paramtype2's
-* node properties such as damage, drowning, falling, etc.
-* other random stuff
+Discord: https://discord.gg/KXv4jPmJbz
