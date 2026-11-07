@@ -1,7 +1,6 @@
-# Mineclonia Copper
+# craft_ruin_texture_pack
+A mineclonia texture pack that is also used for craft &amp; ruin
 
-by NO11
+Patreon: https://www.patreon.com/c/Gerold55
 
-Adds copper ore, blocks and items.
-
-![screenshot](./screenshot.png)
+Discord: https://discord.gg/KXv4jPmJbz

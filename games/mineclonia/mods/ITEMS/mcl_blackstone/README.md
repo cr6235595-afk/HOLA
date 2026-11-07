@@ -1,11 +1,6 @@
-# Blackstone Mod
+# craft_ruin_texture_pack
+A mineclonia texture pack that is also used for craft &amp; ruin
 
-This mod adds new Blocks: Blackstone, Basalt, Soul Fire, Soul Torch etc.
+Patreon: https://www.patreon.com/c/Gerold55
 
-## Version:
-
-Its version 1.0.2
-
-## License
-
-CC BY-SA 4.0
+Discord: https://discord.gg/KXv4jPmJbz

@@ -1,20 +1,6 @@
-# mcl_loom
+# craft_ruin_texture_pack
+A mineclonia texture pack that is also used for craft &amp; ruin
 
-Adds Looms to Mineclonia. Used to add patterns to banners.
+Patreon: https://www.patreon.com/c/Gerold55
 
-## Credit
-
-by PrairieWind
-
-## License
-
-LGPLv2.1
-
-## Media
-
-loom_bottom.png
-loom_front.png
-loom_side.png
-loom_top.png
-License: CC BY-SA 4.0
-Author: MrRar
+Discord: https://discord.gg/KXv4jPmJbz

@@ -1,13 +1,6 @@
-Blast Furnaces for Mineclonia.
-Heavily based on Minetest Game (default/furnace.lua) and the Mineclonia Furnaces.
+# craft_ruin_texture_pack
+A mineclonia texture pack that is also used for craft &amp; ruin
 
-License of source code
-----------------------
-LGPLv2.1
-Based on code from Minetest Game.
-Modified by Wuzzy.
-MCl 2 Furances modified by PrairieWind.
+Patreon: https://www.patreon.com/c/Gerold55
 
-License of media
-----------------
-See the main Mineclonia README.md file.
+Discord: https://discord.gg/KXv4jPmJbz

@@ -1,8 +1,6 @@
-# Lecterns
+# craft_ruin_texture_pack
+A mineclonia texture pack that is also used for craft &amp; ruin
 
-Originally made for Mineclone 2 by Michieal.
-Adapted for mineclonia and added model with book by pixelzone
-lectern GUI code by cora
+Patreon: https://www.patreon.com/c/Gerold55
 
-Texture made by Michieal; The model borrows the top from NathanS21's (Nathan
-Salapat) Lectern model; The rest of the lectern model was created by Michieal.
+Discord: https://discord.gg/KXv4jPmJbz

@@ -1,30 +1,6 @@
-# Luanti API Documentation Generator
+# craft_ruin_texture_pack
+A mineclonia texture pack that is also used for craft &amp; ruin
 
-## Building HTML files from the API reference
+Patreon: https://www.patreon.com/c/Gerold55
 
-### Setup
-
-Use `bash`. Windows users may try "Git Bash".
-
-```sh
-# New virtual environment
-python3 -m venv venv
-# Note: This changes $PATH of the current shell
-source venv/bin/activate
-pip install -r requirements.txt
-```
-
-### Building
-
-```sh
-# Such that "mkdocs" can be found within the venv
-source venv/bin/activate
-./build.sh
-```
-
-See also: https://www.mkdocs.org/user-guide/cli/
-
-Output directories:
-
-* Markdown files: `doc/mkdocs/docs/`
-* HTML (for browsers): `public/index.html`
+Discord: https://discord.gg/KXv4jPmJbz

@@ -1,9 +1,6 @@
-# mcl_sus_stew
+# craft_ruin_texture_pack
+A mineclonia texture pack that is also used for craft &amp; ruin
 
-This Mod adds Suspicious Stews for Mineclonia
+Patreon: https://www.patreon.com/c/Gerold55
 
-## License
-GNU General Public License version 3
-
-## Media
-The texture for the suspicious stew is from the Minecraft resourcepack "Pixel Perfection Legacy" (https://www.curseforge.com/minecraft/texture-packs/pixel-perfection-legacy), wich is licensed under CC BY-SA 4.0 (Creative Commons license)
+Discord: https://discord.gg/KXv4jPmJbz

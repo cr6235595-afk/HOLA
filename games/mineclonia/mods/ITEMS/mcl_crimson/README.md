@@ -1,3 +1,6 @@
-Warped and Crimson fungus by debiankaios.
-Adapted for Mineclone 2 by cora.
-Further improvements by various Mineclonia contributors.
+# craft_ruin_texture_pack
+A mineclonia texture pack that is also used for craft &amp; ruin
+
+Patreon: https://www.patreon.com/c/Gerold55
+
+Discord: https://discord.gg/KXv4jPmJbz

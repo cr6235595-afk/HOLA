@@ -1,8 +1,6 @@
-# `mcl_itemframes`
+# craft_ruin_texture_pack
+A mineclonia texture pack that is also used for craft &amp; ruin
 
-Adds item frames and an API to register them (see `API.md` for reference).
+Patreon: https://www.patreon.com/c/Gerold55
 
-
-## Credits
-
-* `mcl_itemframes_frame.obj` by Emory Fontana (CC BY-SA 4.0)
+Discord: https://discord.gg/KXv4jPmJbz

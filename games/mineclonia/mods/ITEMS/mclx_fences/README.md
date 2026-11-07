@@ -1,16 +1,6 @@
-# Extra fences
-This mod adds a few extra fences to Mineclonia.
+# craft_ruin_texture_pack
+A mineclonia texture pack that is also used for craft &amp; ruin
 
-## License
-MIT license
+Patreon: https://www.patreon.com/c/Gerold55
 
-## Media
-The sound files
-* mcl_fences_nether_brick_fence_gate_open.ogg
-* mcl_fences_nether_brick_fence_gate_close.ogg
-were derived from sounds made by Freesound.org user Slanesh.
-The license is CC BY 3.0 <https://creativecommons.org/licenses/by/3.0/>.
-
-Source: <https://www.freesound.org/people/Slanesh/sounds/31770/>
-
-Everything else is under the MIT License.
+Discord: https://discord.gg/KXv4jPmJbz

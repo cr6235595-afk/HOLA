@@ -1,18 +1,6 @@
-# mcl_stairs
+# craft_ruin_texture_pack
+A mineclonia texture pack that is also used for craft &amp; ruin
 
-Forked from stairs mod in Minetest Game 0.4.16.
+Patreon: https://www.patreon.com/c/Gerold55
 
-## License
-See license.txt for license information.
-
-## Credits
-Originally by Kahrl <kahrl@gmx.net> (LGPL 2.1) and
-celeron55, Perttu Ahola <celeron55@gmail.com> (LGPL 2.1)
-Various Minetest developers and contributors (LGPL 2.1)
-
-## Media
-Jean-Patrick G. (kilbith) <jeanpatrick.guerrero@gmail.com> (CC BY-SA 3.0):
-  stairs_stair.obj
-
-
-
+Discord: https://discord.gg/KXv4jPmJbz

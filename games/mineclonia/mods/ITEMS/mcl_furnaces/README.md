@@ -1,10 +1,6 @@
-# Furnaces for Mineclonia.
+# craft_ruin_texture_pack
+A mineclonia texture pack that is also used for craft &amp; ruin
 
-Heavily based on Minetest Game (default/furnace.lua).
-Modified by Wuzzy.
+Patreon: https://www.patreon.com/c/Gerold55
 
-## License
-LGPLv2.1
-
-## Media
-See the main Mineclonia README.md file.
+Discord: https://discord.gg/KXv4jPmJbz

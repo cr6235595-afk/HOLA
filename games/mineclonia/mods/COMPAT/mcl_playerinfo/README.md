@@ -1,4 +1,6 @@
-# mcl_playerinfo compat mod
+# craft_ruin_texture_pack
+A mineclonia texture pack that is also used for craft &amp; ruin
 
-The functionality of mcl_playerinfo has been merged into mcl_player. This mod
-simple mod provides compatibility to the fields of old mcl_playerinfo.
+Patreon: https://www.patreon.com/c/Gerold55
+
+Discord: https://discord.gg/KXv4jPmJbz

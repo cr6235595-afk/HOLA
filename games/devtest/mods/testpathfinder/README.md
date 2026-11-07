@@ -1,15 +1,6 @@
-# Pathfinder Tester
+# craft_ruin_texture_pack
+A mineclonia texture pack that is also used for craft &amp; ruin
 
-Usage:
+Patreon: https://www.patreon.com/c/Gerold55
 
-Use the Pathfinder Tester tool (`testpathfinder:testpathfinder`).
-Here's how it works:
-
-* Place on node: Set destination position
-* Punch: Find path
-* Sneak+punch: Select pathfinding algorithm
-
-Information will be shown in chat. If a path was found, all waypoints
-will be shown for a few seconds.
-
-See `init.lua` for config variables.
+Discord: https://discord.gg/KXv4jPmJbz

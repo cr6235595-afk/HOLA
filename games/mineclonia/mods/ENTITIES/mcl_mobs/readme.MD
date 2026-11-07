@@ -1,14 +1,6 @@
-# Mobs Redo: Mineclonia Edition
+# craft_ruin_texture_pack
+A mineclonia texture pack that is also used for craft &amp; ruin
 
-Based on Mobs Redo from TenPlus1
-Built from PilzAdam's original Simple Mobs with additional mobs by KrupnoPavel, Zeg9, ExeterDad and AspireMint.
+Patreon: https://www.patreon.com/c/Gerold55
 
-This mod contains the API only for adding your own mobs into the world, so please use the additional modpacks to add animals, monsters etc.
-
-https://forum.minetest.net/viewtopic.php?f=11&t=9917
-
-## Credits
-
-mcl_mobs_mob_poof.ogg:
-- by Planman (license: Creative Commons Zero)
-- Source: <https://freesound.org/people/Planman/sounds/208111/>
+Discord: https://discord.gg/KXv4jPmJbz

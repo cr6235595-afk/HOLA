@@ -1,10 +1,6 @@
-# Mesh hand mod for Mineclonia.
+# craft_ruin_texture_pack
+A mineclonia texture pack that is also used for craft &amp; ruin
 
-This mod uses a better-looking mesh for the wieldhand and applies the player skin texture to it.
+Patreon: https://www.patreon.com/c/Gerold55
 
-## Credits
-Based on 3D Hand [newhand] mod by jordan4ibanez.
-https://forum.minetest.net/viewtopic.php?t=16435
-
-## License
-CC0
+Discord: https://discord.gg/KXv4jPmJbz
