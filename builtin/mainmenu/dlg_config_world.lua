@@ -214,9 +214,14 @@ local function get_formspec(data)
 					fgettext("Enable modpack") .. "]"
 			end
 		else
-			retval = retval ..
-				"checkbox[5.5,-0.125;cb_mod_enable;" .. fgettext("enabled") ..
-				";" .. tostring(mod.enabled) .. "]"
+			local th = (mainmenu and mainmenu.theme) or (custom_menupath and dofile(custom_menupath .. DIR_DELIM .. "theme.lua"))
+			if th and th.toggle_switch then
+				retval = retval .. th.toggle_switch(5.5, 0.125, 3.2, 0.45, "cb_mod_enable", fgettext("enabled"), mod.enabled)
+			else
+				retval = retval ..
+					"checkbox[5.5,-0.125;cb_mod_enable;" .. fgettext("enabled") ..
+					";" .. tostring(mod.enabled) .. "]"
+			end
 		end
 	end
 	if enabled_all then
@@ -259,7 +264,11 @@ local function handle_buttons(this, fields)
 	end
 
 	if fields.cb_mod_enable ~= nil then
-		pkgmgr.enable_mod(this, core.is_yes(fields.cb_mod_enable))
+		local toset = nil
+		if fields.cb_mod_enable ~= "" and fields.cb_mod_enable ~= "toggle" then
+			toset = core.is_yes(fields.cb_mod_enable)
+		end
+		pkgmgr.enable_mod(this, toset)
 		return true
 	end
 
@@ -307,6 +316,10 @@ local function handle_buttons(this, fields)
 
 		if not worldfile:write() then
 			core.log("error", "Failed to write world config file")
+		else
+			if mainmenu and mainmenu.view and mainmenu.view.clear_local_cache then
+				mainmenu.view.clear_local_cache(this.data.worldspec.path)
+			end
 		end
 
 		this:delete()
@@ -373,7 +386,18 @@ function create_configure_world_dlg(worldidx)
 	dlg.data.selected_mod = tonumber(
 			core.settings:get("world_config_selected_mod")) or 0
 
-	dlg.data.worldspec = core.get_worlds()[worldidx]
+	if type(worldidx) == "table" and worldidx.path then
+		dlg.data.worldspec = worldidx
+	elseif type(worldidx) == "number" then
+		dlg.data.worldspec = core.get_worlds()[worldidx]
+	elseif type(worldidx) == "string" then
+		for _, w in ipairs(core.get_worlds()) do
+			if w.path == worldidx then
+				dlg.data.worldspec = w
+				break
+			end
+		end
+	end
 	if not dlg.data.worldspec then
 		dlg:delete()
 		return

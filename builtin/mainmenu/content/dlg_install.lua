@@ -108,6 +108,8 @@ local function get_formspec(data)
 	local button_w = (padded_w - 0.25) / 3
 	local button_pad = button_w / 2
 
+	local th = (mainmenu and mainmenu.theme) or (custom_menupath and dofile(custom_menupath .. DIR_DELIM .. "theme.lua"))
+
 	local formspec = {
 		"formspec_version[3]",
 		"size[", w, ",9.05]",
@@ -129,9 +131,8 @@ local function get_formspec(data)
 
 		"container_end[]",
 
-		"checkbox[0.375,5.7;will_install_deps;",
-		fgettext("Install missing dependencies"), ";",
-		will_install_deps and "true" or "false", "]",
+		(th and th.toggle_switch and th.toggle_switch(0.375, 5.60, 6.0, 0.42, "will_install_deps", fgettext("Install missing dependencies"), will_install_deps) or
+			("checkbox[0.375,5.7;will_install_deps;" .. fgettext("Install missing dependencies") .. ";" .. (will_install_deps and "true" or "false") .. "]")),
 
 		"box[0,6;", w, ",1.8;", message_bg, "]",
 		"textarea[0.375,6.1;", padded_w, ",1.6;;;", message, "]",
@@ -154,7 +155,11 @@ local function handle_submit(this, fields)
 	end
 
 	if fields.will_install_deps ~= nil then
-		data.will_install_deps = core.is_yes(fields.will_install_deps)
+		if fields.will_install_deps == "" or fields.will_install_deps == "toggle" then
+			data.will_install_deps = not data.will_install_deps
+		else
+			data.will_install_deps = core.is_yes(fields.will_install_deps)
+		end
 		return true
 	end
 

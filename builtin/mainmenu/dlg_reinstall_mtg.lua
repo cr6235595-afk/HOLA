@@ -52,7 +52,7 @@ function check_reinstall_mtg(parent)
 	return dlg
 end
 
-local function get_formspec(dialogdata)
+local function get_formspec(_dialogdata)
 	local markup = table.concat({
 		"<big>", hgettext("Minetest Game is no longer installed by default"), "</big>\n",
 		hgettext("For a long time, Luanti shipped with a default game called \"Minetest Game\". " ..

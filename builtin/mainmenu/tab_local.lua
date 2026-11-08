@@ -113,6 +113,9 @@ function singleplayer_refresh_gamebar()
 		end
 		btnbar:add_button(btn_name, text, image, tooltip)
 	end
+
+	local plus_image = core.formspec_escape(defaulttexturedir .. "plus.png")
+	btnbar:add_button("game_open_cdb", "", plus_image, fgettext("Install games from ContentDB"))
 	return true
 end
 
@@ -142,7 +145,7 @@ local function get_disabled_settings(game)
 	return disabled_settings
 end
 
-local function get_formspec(tabview, name, tabdata)
+local function get_formspec(tabview, _name, _tabdata)
 
 	-- Point the player to ContentDB when no games are found
 	if #pkgmgr.games == 0 then
@@ -184,20 +187,36 @@ local function get_formspec(tabview, name, tabdata)
 	local y = 0.2
 	local yo = 0.5625
 
+	local th = (mainmenu and mainmenu.theme) or (custom_menupath and dofile(custom_menupath .. DIR_DELIM .. "theme.lua"))
 	if world then
 		if disabled_settings["creative_mode"] == nil then
-			creative = "checkbox[0,"..y..";cb_creative_mode;".. fgettext("Creative Mode") .. ";" ..
-				dump(core.settings:get_bool("creative_mode")) .. "]"
+			local is_on = core.settings:get_bool("creative_mode")
+			if th and th.toggle_switch then
+				creative = th.toggle_switch(0, y, 4.5, 0.42, "cb_creative_mode", fgettext("Creative Mode"), is_on)
+			else
+				creative = "checkbox[0,"..y..";cb_creative_mode;".. fgettext("Creative Mode") .. ";" ..
+					dump(is_on) .. "]"
+			end
 			y = y + yo
 		end
 		if disabled_settings["enable_damage"] == nil then
-			damage = "checkbox[0,"..y..";cb_enable_damage;".. fgettext("Enable Damage") .. ";" ..
-				dump(core.settings:get_bool("enable_damage")) .. "]"
+			local is_on = core.settings:get_bool("enable_damage")
+			if th and th.toggle_switch then
+				damage = th.toggle_switch(0, y, 4.5, 0.42, "cb_enable_damage", fgettext("Enable Damage"), is_on)
+			else
+				damage = "checkbox[0,"..y..";cb_enable_damage;".. fgettext("Enable Damage") .. ";" ..
+					dump(is_on) .. "]"
+			end
 			y = y + yo
 		end
 		if disabled_settings["enable_server"] == nil then
-			host = "checkbox[0,"..y..";cb_server;".. fgettext("Host Server") ..";" ..
-				dump(core.settings:get_bool("enable_server")) .. "]"
+			local is_on = core.settings:get_bool("enable_server")
+			if th and th.toggle_switch then
+				host = th.toggle_switch(0, y, 4.5, 0.42, "cb_server", fgettext("Host Server"), is_on)
+			else
+				host = "checkbox[0,"..y..";cb_server;".. fgettext("Host Server") ..";" ..
+					dump(is_on) .. "]"
+			end
 			y = y + yo
 		end
 	end
@@ -205,8 +224,8 @@ local function get_formspec(tabview, name, tabdata)
 	retval = retval .. "container[5.25,4.875]"
 	if world then
 		retval = retval ..
-				"button[0,0;3.225,0.8;world_delete;".. fgettext("Delete") .. "]"
-				
+				"button[0,0;3.225,0.8;world_delete;".. fgettext("Delete") .. "]" ..
+				"button[3.325,0;3.225,0.8;world_configure;".. fgettext("Select Mods") .. "]"
 	end
 	retval = retval ..
 			"button[6.65,0;3.225,0.8;world_create;".. fgettext("New") .. "]" ..
@@ -224,11 +243,18 @@ local function get_formspec(tabview, name, tabdata)
 			"container_end[]"
 
 	if core.settings:get_bool("enable_server") and disabled_settings["enable_server"] == nil then
+		local ann_on = core.settings:get_bool("server_announce")
+		local ann_str
+		if th and th.toggle_switch then
+			ann_str = th.toggle_switch(0, y, 4.5, 0.42, "cb_server_announce", fgettext("Announce Server"), ann_on)
+		else
+			ann_str = "checkbox[0,"..y..";cb_server_announce;" .. fgettext("Announce Server") .. ";" ..
+				dump(ann_on) .. "]"
+		end
 		retval = retval ..
 				"button[10.1875,5.925;4.9375,0.8;play;".. fgettext("Host Game") .. "]" ..
 				"container[0.375,0.375]" ..
-				"checkbox[0,"..y..";cb_server_announce;" .. fgettext("Announce Server") .. ";" ..
-				dump(core.settings:get_bool("server_announce")) .. "]"
+				ann_str
 
 		-- Reset y so that the text fields always start at the same position,
 		-- regardless of whether some of the checkboxes are hidden.
@@ -266,7 +292,7 @@ local function get_formspec(tabview, name, tabdata)
 	return retval
 end
 
-local function main_button_handler(this, fields, name, tabdata)
+local function main_button_handler(this, fields, name, _tabdata)
 
 	assert(name == "local")
 
@@ -315,32 +341,36 @@ local function main_button_handler(this, fields, name, tabdata)
 	end
 
 	if fields["cb_creative_mode"] then
-		core.settings:set("creative_mode", fields["cb_creative_mode"])
+		local cur = core.settings:get_bool("creative_mode")
+		local val = (fields["cb_creative_mode"] == "" or fields["cb_creative_mode"] == "toggle") and (not cur) or core.is_yes(fields["cb_creative_mode"])
+		core.settings:set_bool("creative_mode", val)
 		local selected = core.get_textlist_index("sp_worlds")
-		menu_worldmt(selected, "creative_mode", fields["cb_creative_mode"])
-
+		menu_worldmt(selected, "creative_mode", val and "true" or "false")
 		return true
 	end
 
 	if fields["cb_enable_damage"] then
-		core.settings:set("enable_damage", fields["cb_enable_damage"])
+		local cur = core.settings:get_bool("enable_damage")
+		local val = (fields["cb_enable_damage"] == "" or fields["cb_enable_damage"] == "toggle") and (not cur) or core.is_yes(fields["cb_enable_damage"])
+		core.settings:set_bool("enable_damage", val)
 		local selected = core.get_textlist_index("sp_worlds")
-		menu_worldmt(selected, "enable_damage", fields["cb_enable_damage"])
-
+		menu_worldmt(selected, "enable_damage", val and "true" or "false")
 		return true
 	end
 
 	if fields["cb_server"] then
-		core.settings:set("enable_server", fields["cb_server"])
-
+		local cur = core.settings:get_bool("enable_server")
+		local val = (fields["cb_server"] == "" or fields["cb_server"] == "toggle") and (not cur) or core.is_yes(fields["cb_server"])
+		core.settings:set_bool("enable_server", val)
 		return true
 	end
 
 	if fields["cb_server_announce"] then
-		core.settings:set("server_announce", fields["cb_server_announce"])
+		local cur = core.settings:get_bool("server_announce")
+		local val = (fields["cb_server_announce"] == "" or fields["cb_server_announce"] == "toggle") and (not cur) or core.is_yes(fields["cb_server_announce"])
+		core.settings:set_bool("server_announce", val)
 		local selected = core.get_textlist_index("srv_worlds")
-		menu_worldmt(selected, "server_announce", fields["cb_server_announce"])
-
+		menu_worldmt(selected, "server_announce", val and "true" or "false")
 		return true
 	end
 
@@ -471,5 +501,3 @@ return {
 	cbf_button_handler = main_button_handler,
 	on_change = on_change
 }
-
-

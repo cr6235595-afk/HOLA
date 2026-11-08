@@ -43,7 +43,7 @@ local function on_change(type)
 	end
 end
 
-local function get_formspec(tabview, name, tabdata)
+local function get_formspec(_tabview, _name, tabdata)
 	if not packages then
 		update_packages()
 	end
@@ -75,6 +75,8 @@ local function get_formspec(tabview, name, tabdata)
 		"table[0.4,0.8;6.3,4.8;pkglist;",
 		pkgmgr.render_packagelist(packages, use_technical_names, update_icons),
 		";", tabdata.selected_pkg, "]",
+
+		"button[0.4,5.8;6.3,0.9;btn_contentdb;", contentdb_label, "]"
 	}
 
 	local selected_pkg
@@ -117,8 +119,10 @@ local function get_formspec(tabview, name, tabdata)
 		if selected_pkg.type == "game" then
 			title_and_name = selected_pkg.title or selected_pkg.name
 		else
+			local th = (mainmenu and mainmenu.theme) or rawget(_G, "theme") or (custom_menupath and dofile(custom_menupath .. DIR_DELIM .. "theme.lua"))
+			local muted_col = (th and th.colors and th.colors.text_muted) or "#cbd5e1"
 			title_and_name = (selected_pkg.title or selected_pkg.name) .. "\n" ..
-				core.colorize("#BFBFBF", selected_pkg.name)
+				core.colorize(muted_col, selected_pkg.name)
 		end
 
 		local desc_height = 3.2
@@ -206,7 +210,7 @@ local function handle_doubleclick(pkg)
 	end
 end
 
-local function handle_buttons(tabview, fields, tabname, tabdata)
+local function handle_buttons(tabview, fields, _tabname, tabdata)
 
 	if fields.pkglist then
 		local event = core.explode_table_event(fields.pkglist)
@@ -216,7 +220,17 @@ local function handle_buttons(tabview, fields, tabname, tabdata)
 		end
 		return true
 	end
-if fields.btn_mod_mgr_rename_modpack then
+
+	if fields.btn_contentdb then
+		local dlg = create_contentdb_dlg()
+		dlg:set_parent(tabview)
+		tabview:hide()
+		dlg:show()
+		packages = nil
+		return true
+	end
+
+	if fields.btn_mod_mgr_rename_modpack then
 		local mod = packages:get_list()[tabdata.selected_pkg]
 		local dlg_renamemp = create_rename_modpack_dlg(mod)
 		dlg_renamemp:set_parent(tabview)
@@ -279,5 +293,3 @@ return {
 	cbf_button_handler = handle_buttons,
 	on_change = on_change
 }
-
-

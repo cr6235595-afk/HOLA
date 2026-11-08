@@ -16,6 +16,9 @@ local function delete_world_buttonhandler(this, fields)
 				this.data.delete_index <= #menudata.worldlist:get_raw_list() then
 			core.delete_world(this.data.delete_index)
 			menudata.worldlist:refresh()
+			if mainmenu and mainmenu.view and mainmenu.view.clear_local_cache then
+				mainmenu.view.clear_local_cache()
+			end
 		end
 		this:delete()
 		return true

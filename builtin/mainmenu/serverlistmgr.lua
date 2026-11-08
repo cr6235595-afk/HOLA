@@ -182,7 +182,7 @@ function serverlistmgr.sync()
 
 	-- note: this isn't cached because it's way too dynamic
 	core.handle_async(
-		function(param)
+		function(_param)
 			local http = core.get_http_api()
 			local url = ("%s/list?proto_version_min=%d&proto_version_max=%d"):format(
 				core.settings:get("serverlist_url"),

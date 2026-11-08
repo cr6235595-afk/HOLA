@@ -97,7 +97,7 @@ pkgmgr = {}
 function pkgmgr.get_mods(path, virtual_path, listing)
 	local mods = core.get_mod_list(path, virtual_path)
 	local parent = {}
-	for i, toadd in ipairs(mods) do
+	for _, toadd in ipairs(mods) do
 		listing[#listing + 1] = toadd
 
 		if toadd.is_modpack then
@@ -791,6 +791,90 @@ function pkgmgr.reload_games()
 end
 
 --------------------------------------------------------------------------------
+local game_last_played_cache = {}
+local game_last_played_ts = 0
+
+function pkgmgr.refresh_game_last_played()
+	game_last_played_cache = {}
+	game_last_played_ts = os.time()
+
+	-- 1. Check settings overrides if set
+	for _, g in ipairs(pkgmgr.games or {}) do
+		local norm_id = pkgmgr.normalize_game_id(g.id)
+		local saved = core.settings:get("game_last_played_" .. norm_id) or core.settings:get("game_last_played_" .. g.id)
+		local val = tonumber(saved) or 0
+		if val > (game_last_played_cache[norm_id] or 0) then
+			game_last_played_cache[norm_id] = val
+		end
+	end
+
+	-- 2. Scan all worlds
+	local worlds = core.get_worlds() or {}
+	local delim = DIR_DELIM or "/"
+	for _, w in ipairs(worlds) do
+		if w.gameid and w.path then
+			local g_obj = pkgmgr.find_by_gameid and pkgmgr.find_by_gameid(w.gameid)
+			local norm_id = (g_obj and g_obj.id) or pkgmgr.normalize_game_id(w.gameid)
+			local ts = 0
+			local wmt_path = w.path .. delim .. "world.mt"
+			local f = io.open(wmt_path, "r")
+			if f then
+				for line in f:lines() do
+					local lp = line:match("^last_played%s*=%s*(%d+)")
+					if lp then
+						ts = tonumber(lp) or 0
+						break
+					end
+				end
+				f:close()
+			end
+			if ts > (game_last_played_cache[norm_id] or 0) then
+				game_last_played_cache[norm_id] = ts
+				if g_obj and g_obj.id then
+					game_last_played_cache[g_obj.id] = ts
+				end
+				game_last_played_cache[w.gameid] = ts
+			end
+		end
+	end
+
+	-- 3. If currently selected game in settings has no record, ensure it has at least priority 1
+	local menu_last_game = core.settings:get("menu_last_game")
+	if menu_last_game then
+		local norm_last = pkgmgr.normalize_game_id(menu_last_game)
+		if not game_last_played_cache[norm_last] or game_last_played_cache[norm_last] <= 0 then
+			game_last_played_cache[norm_last] = 1
+		end
+	end
+end
+
+function pkgmgr.get_game_last_played(game_id)
+	if not game_id then return 0 end
+	local norm_id = pkgmgr.normalize_game_id(game_id)
+	local now = os.time()
+	if not game_last_played_cache[norm_id] or (now - game_last_played_ts > 3) then
+		pkgmgr.refresh_game_last_played()
+	end
+	return game_last_played_cache[norm_id] or 0
+end
+
+function pkgmgr.get_games_by_last_played()
+	local games = {}
+	for _, g in ipairs(pkgmgr.games or {}) do
+		table.insert(games, g)
+	end
+	table.sort(games, function(a, b)
+		local ta = pkgmgr.get_game_last_played(a.id)
+		local tb = pkgmgr.get_game_last_played(b.id)
+		if ta ~= tb then
+			return ta > tb
+		end
+		return a.title:lower() < b.title:lower()
+	end)
+	return games
+end
+
+--------------------------------------------------------------------------------
 function pkgmgr.reload_by_type(type)
 	if type == "game" then
 		pkgmgr.reload_games()
@@ -873,3 +957,5 @@ end
 -- read initial data
 --------------------------------------------------------------------------------
 pkgmgr.reload_games()
+
+return pkgmgr

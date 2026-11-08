@@ -42,7 +42,7 @@ local function get_sorted_servers()
 	return servers
 end
 
-local function is_selected_fav(server)
+local function is_selected_fav(_server)
 	local address = core.settings:get("address")
 	local port = tonumber(core.settings:get("remote_port"))
 
@@ -86,7 +86,7 @@ local function find_selected_server()
 	end
 end
 
-local function get_formspec(tabview, name, tabdata)
+local function get_formspec(_tabview, _name, tabdata)
 	-- Update the cached supported proto info,
 	-- it may have changed after a change by the settings menu.
 	common_update_cached_supp_proto()
@@ -495,7 +495,7 @@ local function search_server_list(input, tabdata)
 	set_selected_server(nil)
 end
 
-local function main_button_handler(tabview, fields, name, tabdata)
+local function main_button_handler(tabview, fields, _name, tabdata)
 	if fields.te_name then
 		gamedata.playername = fields.te_name
 		core.settings:set("name", fields.te_name)

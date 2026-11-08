@@ -135,7 +135,7 @@ local function create_world_formspec(dialogdata)
 	do -- build the list of mapgens
 		local i = 1
 		local first_mg
-		for k, v in pairs(mapgens) do
+		for _, v in pairs(mapgens) do
 			if not first_mg then
 				first_mg = v
 			end
@@ -156,6 +156,8 @@ local function create_world_formspec(dialogdata)
 	-- "flag_main_foo-bar-baz" controls dialogdata.flags["main"]["foo_bar_baz"]
 	-- see the buttonhandler for the implementation of this
 
+	local th = (mainmenu and mainmenu.theme) or (custom_menupath and dofile(custom_menupath .. DIR_DELIM .. "theme.lua"))
+
 	local mg_main_flags = function(mapgen, y)
 		if mapgen == "singlenode" then
 			return "", y
@@ -164,12 +166,26 @@ local function create_world_formspec(dialogdata)
 			return "", y
 		end
 
-		local form = "checkbox[0," .. y .. ";flag_main_caves;" ..
-			fgettext("Caves") .. ";"..strflag(flags.main, "caves").."]"
+		local caves_on = (strflag(flags.main, "caves") == "true")
+		local dungeons_on = (strflag(flags.main, "dungeons") == "true")
+		local decor_on = (strflag(flags.main, "decorations") == "true")
+
+		local form
+		if th and th.toggle_switch then
+			form = th.toggle_switch(0, y, 6.0, 0.42, "flag_main_caves", fgettext("Caves"), caves_on, fgettext("Network of tunnels and caves"))
+		else
+			form = "checkbox[0," .. y .. ";flag_main_caves;" ..
+				fgettext("Caves") .. ";"..strflag(flags.main, "caves").."]" ..
+				"tooltip[flag_main_caves;" .. fgettext("Network of tunnels and caves") .. "]"
+		end
 		y = y + 0.5
 
-		form = form .. "checkbox[0,"..y..";flag_main_dungeons;" ..
-			fgettext("Dungeons") .. ";"..strflag(flags.main, "dungeons").."]"
+		if th and th.toggle_switch then
+			form = form .. th.toggle_switch(0, y, 6.0, 0.42, "flag_main_dungeons", fgettext("Dungeons"), dungeons_on)
+		else
+			form = form .. "checkbox[0,"..y..";flag_main_dungeons;" ..
+				fgettext("Dungeons") .. ";"..strflag(flags.main, "dungeons").."]"
+		end
 		y = y + 0.5
 
 		-- TRANSLATORS: Map generator decorations (used for structures, trees, plants, and more)
@@ -180,17 +196,18 @@ local function create_world_formspec(dialogdata)
 		else
 			d_tt = fgettext("Structures appearing on the terrain, typically trees and plants")
 		end
-		form = form .. "checkbox[0,"..y..";flag_main_decorations;" ..
-			d_name .. ";" ..
-			strflag(flags.main, "decorations").."]" ..
-			"tooltip[flag_mg_decorations;" ..
-			d_tt ..
-			"]"
+		if th and th.toggle_switch then
+			form = form .. th.toggle_switch(0, y, 6.0, 0.42, "flag_main_decorations", d_name, decor_on, d_tt)
+		else
+			form = form .. "checkbox[0,"..y..";flag_main_decorations;" ..
+				d_name .. ";" ..
+				strflag(flags.main, "decorations").."]" ..
+				"tooltip[flag_mg_decorations;" ..
+				d_tt ..
+				"]"
+		end
 		y = y + 0.5
 
-		form = form .. "tooltip[flag_main_caves;" ..
-		fgettext("Network of tunnels and caves")
-		.. "]"
 		return form, y
 	end
 
@@ -204,11 +221,15 @@ local function create_world_formspec(dialogdata)
 		local form = ""
 		for _, tab in pairs(flag_checkboxes[mapgen]) do
 			local id = "flag_"..mapgen.."_"..tab[1]:gsub("_", "-")
-			form = form .. ("checkbox[0,%f;%s;%s;%s]"):
-				format(y, id, tab[2], strflag(flags[mapgen], tab[1]))
-
-			if tab[3] then
-				form = form .. "tooltip["..id..";"..tab[3].."]"
+			local is_on = (strflag(flags[mapgen], tab[1]) == "true")
+			if th and th.toggle_switch then
+				form = form .. th.toggle_switch(0, y, 6.0, 0.42, id, tab[2], is_on, tab[3])
+			else
+				form = form .. ("checkbox[0,%f;%s;%s;%s]"):
+					format(y, id, tab[2], strflag(flags[mapgen], tab[1]))
+				if tab[3] then
+					form = form .. "tooltip["..id..";"..tab[3].."]"
+				end
 			end
 			y = y + 0.5
 		end
@@ -244,11 +265,17 @@ local function create_world_formspec(dialogdata)
 
 		-- biomeblend
 		y = y + 0.55
-		form = form .. "checkbox[0,"..y..";flag_v6_biomeblend;" ..
-			-- TRANSLATORS: Smooth transition between biomes
-			fgettext("Biome blending") .. ";"..strflag(flags.v6, "biomeblend").."]" ..
-			"tooltip[flag_v6_biomeblend;" ..
-			fgettext("Smooth transition between biomes") .. "]"
+		local blend_on = (strflag(flags.v6, "biomeblend") == "true")
+		local blend_tt = fgettext("Smooth transition between biomes")
+		if th and th.toggle_switch then
+			form = form .. th.toggle_switch(0, y, 6.0, 0.42, "flag_v6_biomeblend", fgettext("Biome blending"), blend_on, blend_tt)
+		else
+			form = form .. "checkbox[0,"..y..";flag_v6_biomeblend;" ..
+				-- TRANSLATORS: Smooth transition between biomes
+				fgettext("Biome blending") .. ";"..strflag(flags.v6, "biomeblend").."]" ..
+				"tooltip[flag_v6_biomeblend;" ..
+				blend_tt .. "]"
+		end
 
 		return form, y
 	end
@@ -296,12 +323,14 @@ local function create_world_formspec(dialogdata)
 
 	-- Warning when making a devtest world
 	if game.id == "devtest" then
+		local warn_col = (th and th.colors and th.colors.warn_gold) or "#f59e0b"
 		retval = retval ..
 			"container[0,3.5]" ..
-			"box[0,0;5.8,1.7;#ff8800]" ..
+			"box[0,0;5.8,1.7;" .. warn_col .. "]" ..
 			"textarea[0.4,0.1;6,1.8;;;"..
 			fgettext("Development Test is meant for developers.") .. "]" ..
-			"button[1,1;4,0.5;world_create_open_cdb;" .. fgettext("Install another game") .. "]" ..
+			(th and th.button_secondary and th.button_secondary(1, 1, 4, 0.5, "world_create_open_cdb", fgettext("Install another game"), nil, true) or
+			("button[1,1;4,0.5;world_create_open_cdb;" .. fgettext("Install another game") .. "]")) ..
 			"container_end[]"
 	end
 
@@ -316,8 +345,10 @@ local function create_world_formspec(dialogdata)
 
 		-- Menu buttons
 		"container[0,6.9]"..
-		"button[3.25,0;3,0.5;world_create_confirm;" .. fgettext("Create") .. "]" ..
-		"button[6.25,0;3,0.5;world_create_cancel;" .. fgettext("Cancel") .. "]" ..
+		(th and th.button_primary and th.button_primary(3.25, 0, 3, 0.5, "world_create_confirm", fgettext("Create"), nil, true) or
+		("button[3.25,0;3,0.5;world_create_confirm;" .. fgettext("Create") .. "]")) ..
+		(th and th.button_secondary and th.button_secondary(6.25, 0, 3, 0.5, "world_create_cancel", fgettext("Cancel"), nil, true) or
+		("button[6.25,0;3,0.5;world_create_cancel;" .. fgettext("Cancel") .. "]")) ..
 		"container_end[]"
 
 	return retval
@@ -396,6 +427,9 @@ local function create_world_buttonhandler(this, fields)
 			core.settings:set("menu_last_game", game.id)
 			menudata.worldlist:set_filtercriteria(game.id)
 			menudata.worldlist:refresh()
+			if mainmenu and mainmenu.view and mainmenu.view.clear_local_cache then
+				mainmenu.view.clear_local_cache()
+			end
 			core.settings:set("mainmenu_last_selected_world",
 					menudata.worldlist:raw_index_by_uid(worldname))
 		end
@@ -420,8 +454,11 @@ local function create_world_buttonhandler(this, fields)
 			-- We replaced the underscore of flag names with a dash.
 			local flag = string.gsub(split[3], "-", "_")
 			local ftable = this.data.flags[split[2]]
-			assert(ftable)
-			ftable[flag] = v == "true"
+			if v == "" or v == "toggle" then
+				ftable[flag] = not ftable[flag]
+			else
+				ftable[flag] = v == "true"
+			end
 			return true
 		end
 	end

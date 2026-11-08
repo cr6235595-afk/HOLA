@@ -2,7 +2,7 @@
 -- Copyright (C) 2023 rubenwardy
 -- SPDX-License-Identifier: LGPL-2.1-or-later
 
-local path = core.get_mainmenu_path() .. DIR_DELIM .. "content"
+local path = (custom_menupath or core.get_mainmenu_path()) .. DIR_DELIM .. "content"
 
 dofile(path .. DIR_DELIM .. "pkgmgr.lua")
 dofile(path .. DIR_DELIM .. "contentdb.lua")

@@ -13,7 +13,8 @@ local function prepare_credits(dest, source)
 end
 
 local function get_credits()
-	local f = assert(io.open(core.get_mainmenu_path() .. "/credits.json"))
+	local credits_file = (custom_menupath or core.get_mainmenu_path()) .. "/credits.json"
+	local f = assert(io.open(credits_file))
 	local json = core.parse_json(f:read("*all"))
 	f:close()
 	return json
@@ -44,7 +45,7 @@ return {
 	name = "about",
 	caption = fgettext("About"),
 
-	cbf_formspec = function(tabview, name, tabdata)
+	cbf_formspec = function(_tabview, _name, _tabdata)
 		local logofile = defaulttexturedir .. "logo.png"
 		local version = core.get_version()
 
@@ -101,14 +102,12 @@ return {
 			core.formspec_escape(get_renderer_info())
 		fs = fs .. "style_type[textarea;valign=center]" ..
 			"textarea[0.1,6;5.7,1;;" .. active_renderer_info .. ";]" ..
-			"hypertext[5.5,0.25;9.75,6.6;credits;" .. core.formspec_escape(hypertext) .. "]" ..
-                        "label[5.7,6.9;VoxeLibre]" ..
-                        "textarea[5.7,7.2;9.2,2.8;;VoxeLibre: This game includes VoxeLibre, free software distributed under the GNU General Public License v3.0 or later (GPLv3+). VoxeLibre includes components and resources distributed under various licenses, including GPLv3+, LGPL, MIT, Apache, CC BY-SA, CC BY and CC0. Copyright notices, credits and full license texts are preserved in the game distribution within the corresponding VoxeLibre files. VoxeLibre: https://github.com/VoxeLibre/VoxeLibre;]"
+			"hypertext[5.5,0.25;9.75,6.6;credits;" .. core.formspec_escape(hypertext) .. "]"
 
 		return fs
 	end,
 
-	cbf_button_handler = function(this, fields, name, tabdata)
+	cbf_button_handler = function(_this, fields, _name, _tabdata)
 		if fields.share_debug then
 			local path = core.get_user_path() .. DIR_DELIM .. "debug.txt"
 			core.share_file(path)
@@ -125,5 +124,3 @@ return {
 		end
 	end,
 }
-
-

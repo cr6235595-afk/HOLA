@@ -26,7 +26,7 @@ local function get_formspec(dialogdata)
 			table.insert(cells, ("%d"):format(depth))
 			table.insert(cells, mod)
 		end
-		for i, mod in ipairs(server.mods) do
+		for _, mod in ipairs(server.mods) do
 			local prefix = get_prefix(mod)
 			if last_prefix == prefix then
 				add_row(1, mod)
@@ -57,6 +57,8 @@ local function get_formspec(dialogdata)
 				"<b>" .. core.hypertext_escape(server.name) .. "</b>")
 	end
 
+	local th = (mainmenu and mainmenu.theme) or (custom_menupath and dofile(custom_menupath .. DIR_DELIM .. "theme.lua"))
+
 	local formspec = {
 		"formspec_version[8]",
 		"size[8,9.5]",
@@ -65,13 +67,14 @@ local function get_formspec(dialogdata)
 		"tablecolumns[", group_by_prefix and
 			(expand_all and "indent;text" or "tree;text") or "text", "]",
 		"table[0.5,1.5;7,6.8;mods;", cells, "]",
-		-- TRANSLATORS: A checkbox; if enabled, it will group mods by their prefix
-		"checkbox[0.5,8.7;group_by_prefix;", fgettext("Group by prefix"), ";",
-			group_by_prefix and "true" or "false", "]",
+		-- TRANSLATORS: A toggle; if enabled, it will group mods by their prefix
+		(th and th.toggle_switch and th.toggle_switch(0.5, 8.55, 4.8, 0.42, "group_by_prefix", fgettext("Group by prefix"), group_by_prefix) or
+			("checkbox[0.5,8.7;group_by_prefix;" .. fgettext("Group by prefix") .. ";" .. (group_by_prefix and "true" or "false") .. "]")),
 		-- TRANSLATORS: Expand all entries in a tree view
-		group_by_prefix and ("checkbox[0.5,9.15;expand_all;" .. fgettext("Expand all") .. ";" ..
-			(expand_all and "true" or "false") .. "]") or "",
-		"button[5.5,8.5;2,0.8;quit;OK]"
+		group_by_prefix and (th and th.toggle_switch and th.toggle_switch(0.5, 9.05, 4.8, 0.42, "expand_all", fgettext("Expand all"), expand_all) or
+			("checkbox[0.5,9.15;expand_all;" .. fgettext("Expand all") .. ";" .. (expand_all and "true" or "false") .. "]")) or "",
+		(th and th.button_primary and th.button_primary(5.5, 8.5, 2, 0.8, "quit", "OK", nil, true, "font_size=+1")) or
+			"button[5.5,8.5;2,0.8;quit;OK]"
 	}
 	return table.concat(formspec, "")
 end
@@ -82,13 +85,21 @@ local function buttonhandler(this, fields)
 		return true
 	end
 
-	if fields.group_by_prefix then
-		this.data.group_by_prefix = core.is_yes(fields.group_by_prefix)
+	if fields.group_by_prefix ~= nil then
+		if fields.group_by_prefix == "" or fields.group_by_prefix == "toggle" then
+			this.data.group_by_prefix = not this.data.group_by_prefix
+		else
+			this.data.group_by_prefix = core.is_yes(fields.group_by_prefix)
+		end
 		return true
 	end
 
-	if fields.expand_all then
-		this.data.expand_all = core.is_yes(fields.expand_all)
+	if fields.expand_all ~= nil then
+		if fields.expand_all == "" or fields.expand_all == "toggle" then
+			this.data.expand_all = not this.data.expand_all
+		else
+			this.data.expand_all = core.is_yes(fields.expand_all)
+		end
 		return true
 	end
 

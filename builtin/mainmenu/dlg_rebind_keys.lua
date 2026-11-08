@@ -5,7 +5,7 @@
 
 local doc_url = "https://docs.luanti.org/for-players/controls/"
 
-local function get_formspec(dialogdata)
+local function get_formspec(_dialogdata)
 	local markup = table.concat({
 		"<big>" .. hgettext("Keybindings changed") .. "</big>",
 		hgettext("The input handling system was reworked in Luanti 5.12.0."),
